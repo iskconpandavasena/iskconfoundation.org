@@ -37,13 +37,22 @@
 
         .hero {
             min-height: 100vh;
-            background: linear-gradient(135deg, rgba(44,44,44,0.7) 0%, rgba(26,26,26,0.8) 100%), url('prabhupada.jpg') center/cover no-repeat fixed;
+            background: linear-gradient(135deg, rgba(44,44,44,0.7) 0%, rgba(26,26,26,0.8) 100%), url('prabhupada.jpg') center/cover no-repeat;
             display: flex;
             align-items: flex-end;
             justify-content: center;
             position: relative;
             overflow: hidden;
             padding-bottom: 5%;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                background-attachment: scroll;
+                background-position: center top;
+                background-size: cover;
+                min-height: 100svh;
+            }
         }
 
         .hero-content {

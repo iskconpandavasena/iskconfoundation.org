@@ -283,50 +283,5 @@
         </p>
         <a href="IF Section 48 Inspection Handbook.pdf" target="_blank">Section 48 Inspection Handbook</a>
     </footer>
-
-    <script>
-        document.addEventListener('click', function(e) {
-            if (e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('#')) {
-                e.preventDefault();
-                const target = document.querySelector(e.target.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            }
-        });
-
-        let scrolling = false;
-        let scrollTarget = window.pageYOffset;
-        
-        function smoothScroll() {
-            if (!scrolling) return;
-            
-            const current = window.pageYOffset;
-            const diff = scrollTarget - current;
-            
-            if (Math.abs(diff) < 1) {
-                scrolling = false;
-                return;
-            }
-            
-            window.scrollTo(0, current + diff * 0.1);
-            requestAnimationFrame(smoothScroll);
-        }
-        
-        let wheelTimeout;
-        window.addEventListener('wheel', function(e) {
-            clearTimeout(wheelTimeout);
-            scrollTarget = window.pageYOffset + e.deltaY;
-            
-            if (!scrolling) {
-                scrolling = true;
-                smoothScroll();
-            }
-            
-            wheelTimeout = setTimeout(() => {
-                scrolling = false;
-            }, 100);
-        }, { passive: true });
-    </script>
 </body>
 </html>

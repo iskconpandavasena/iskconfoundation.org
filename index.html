@@ -117,6 +117,22 @@
             box-shadow: 0 20px 60px rgba(0,0,0,0.2);
         }
 
+        .highlight::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212,165,116,0.2) 0%, transparent 60%);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
         .highlight h2 {
             color: white;
             margin-bottom: 1.5rem;

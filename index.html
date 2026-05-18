@@ -1,319 +1,359 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="description" content="ISKCON Foundation - Building a community through giving">
-    <title>ISKCON Foundation</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISKCON Foundation</title>
+  <meta name="description" content="The ISKCON Foundation is the designated religious authority for the Avanti Schools Trust and the inspecting body for the Section 48 inspections of its schools.">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
-        :root {
-            --primary: #2c2c2c;
-            --secondary: #4a4a4a;
-            --dark: #1a1a1a;
-            --light: #f8f9fa;
-            --accent: #d4a574;
-        }
+  <style>
+    :root {
+      --cream: #F8F4EC;
+      --cream-deep: #F2EBDD;
+      --maroon: #4A1B0C;
+      --maroon-dark: #2C1108;
+      --terracotta: #993C1D;
+      --saffron: #F0997B;
+      --ink: #2C2C2A;
+      --ink-muted: #5F5E5A;
+      --line: rgba(74, 27, 12, 0.12);
+      --line-soft: rgba(74, 27, 12, 0.08);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-            background: #fafafa;
-        }
+    * { box-sizing: border-box; }
 
-        .hero {
-            min-height: 100vh;
-            background: linear-gradient(135deg, rgba(44,44,44,0.7) 0%, rgba(26,26,26,0.8) 100%), url('prabhupada.jpg') center/cover no-repeat;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            padding-bottom: 5%;
-        }
+    html { scroll-behavior: smooth; }
 
-        @media (max-width: 768px) {
-            .hero {
-                background-attachment: scroll;
-                background-position: center top;
-                background-size: cover;
-                min-height: 100svh;
-            }
-        }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--ink);
+      background: var(--cream);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-        .hero-content {
-            text-align: center;
-            color: white;
-            z-index: 1;
-            padding: 3rem;
-            max-width: 900px;
-            backdrop-filter: blur(10px);
-            background: rgba(255,255,255,0.05);
-            border-radius: 32px;
-            border: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-        }
+    a { color: var(--terracotta); text-decoration: none; transition: color 0.15s ease; }
+    a:hover { color: var(--maroon); }
+    a:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 3px; border-radius: 2px; }
 
-        .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 5.5rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            letter-spacing: -0.03em;
-            animation: fadeInUp 1s ease;
-            background: linear-gradient(135deg, #fff, var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            white-space: nowrap;
-        }
+    h1, h2, h3 {
+      font-family: var(--serif);
+      font-weight: 500;
+      color: var(--maroon);
+      margin: 0;
+      letter-spacing: -0.005em;
+    }
 
-        .hero h2 {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            font-weight: 300;
-            opacity: 0.95;
-            animation: fadeInUp 1s ease 0.2s backwards;
-        }
+    p { margin: 0 0 1em; }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    em { font-style: italic; }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
 
-        .section {
-            padding: 8rem 0;
-        }
+    .container-wide {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
 
-        .card {
-            background: white;
-            border-radius: 32px;
-            padding: 3.5rem;
-            margin: 2.5rem 1rem;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-            border: 1px solid rgba(0,0,0,0.04);
-            position: relative;
-            overflow: hidden;
-        }
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin: 0 0 14px;
+      font-weight: 500;
+    }
 
-        .card h2 {
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-        }
+    /* Header */
+    header.site {
+      padding: 22px 32px;
+      border-bottom: 0.5px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+      background: rgba(248, 244, 236, 0.92);
+    }
 
-        .card p {
-            font-size: 1.125rem;
-            line-height: 1.9;
-            color: #555;
-        }
+    .site-inner {
+      max-width: 880px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
 
-        .highlight {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 4.5rem 3.5rem;
-            border-radius: 32px;
-            margin: 3rem 1rem;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-        }
+    .wordmark {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 500;
+      color: var(--maroon);
+      letter-spacing: -0.01em;
+    }
 
-        .highlight::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(212,165,116,0.2) 0%, transparent 60%);
-            animation: rotate 30s linear infinite;
-        }
+    nav.primary {
+      display: flex;
+      gap: 28px;
+    }
 
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
+    nav.primary a {
+      font-size: 13px;
+      color: var(--ink-muted);
+      letter-spacing: 0.01em;
+    }
 
-        .highlight h2 {
-            color: white;
-            margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 1;
-        }
+    nav.primary a:hover { color: var(--maroon); }
 
-        .highlight p {
-            color: rgba(255,255,255,0.95);
-            position: relative;
-            z-index: 1;
-        }
+    @media (max-width: 600px) {
+      nav.primary { display: none; }
+    }
 
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-            position: relative;
-        }
+    /* Hero */
+    section.hero {
+      padding: 120px 32px 110px;
+      text-align: center;
+      border-bottom: 0.5px solid var(--line-soft);
+    }
 
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-        }
+    .hero h1 {
+      font-size: 72px;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin: 0 0 28px;
+    }
 
-        footer img {
-            margin-bottom: 1.5rem;
-            filter: brightness(0) invert(1);
-        }
+    .hero .lede {
+      font-size: 18px;
+      color: var(--ink-muted);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
 
-        footer p {
-            opacity: 0.8;
-            line-height: 2;
-            font-size: 1.05rem;
-        }
+    @media (max-width: 600px) {
+      .hero { padding: 80px 28px 80px; }
+      .hero h1 { font-size: 48px; }
+      .hero .lede { font-size: 16px; }
+    }
 
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 1.5rem;
-            padding: 0.75rem 1.5rem;
-            border: 2px solid var(--accent);
-            border-radius: 12px;
-            font-weight: 500;
-        }
+    /* Generic section */
+    section.band {
+      padding: 88px 0;
+    }
 
-        .divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent);
-            margin: 5rem 0;
-        }
+    section.band-soft {
+      padding: 88px 0;
+      background: var(--cream-deep);
+      border-top: 0.5px solid var(--line-soft);
+      border-bottom: 0.5px solid var(--line-soft);
+    }
 
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 1rem;
-            }
-            .section {
-                padding: 4rem 0;
-            }
-            .card, .highlight {
-                padding: 2.5rem;
-            }
-            .hero-content {
-                padding: 2rem;
-            }
-        }
-    </style>
+    section.band-dark {
+      padding: 88px 0;
+      background: var(--maroon);
+      color: var(--cream);
+    }
+
+    @media (max-width: 600px) {
+      section.band, section.band-soft, section.band-dark { padding: 64px 0; }
+    }
+
+    section h2 {
+      font-size: 38px;
+      line-height: 1.15;
+      margin: 0 0 24px;
+      letter-spacing: -0.01em;
+    }
+
+    section.band-dark h2 { color: var(--cream); }
+
+    section h3 {
+      font-size: 21px;
+      line-height: 1.3;
+      margin: 36px 0 14px;
+      color: var(--maroon);
+      font-weight: 500;
+    }
+
+    section p { font-size: 16px; }
+
+    /* Documents */
+    .documents {
+      margin-top: 36px;
+      border-top: 0.5px solid var(--line);
+    }
+
+    .doc-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-bottom: 0.5px solid var(--line);
+      gap: 16px;
+      transition: padding-left 0.2s ease;
+      cursor: pointer;
+    }
+
+    .doc-row:hover { padding-left: 6px; }
+
+    .doc-row .doc-name {
+      font-size: 15px;
+      color: var(--ink);
+    }
+
+    .doc-row .doc-meta {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: var(--terracotta);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .doc-row .doc-meta .arrow {
+      margin-left: 8px;
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+
+    .doc-row:hover .arrow { transform: translateY(2px); }
+
+    /* Contact */
+    .contact-email {
+      font-family: var(--serif);
+      font-size: 26px;
+      color: var(--saffron);
+      margin: 24px 0 36px;
+      display: inline-block;
+    }
+
+    .contact-email:hover { color: var(--cream); }
+
+    section.band-dark .eyebrow { color: var(--saffron); }
+
+    section.band-dark p { color: rgba(248, 244, 236, 0.85); }
+
+    /* Footer */
+    footer.site {
+      background: var(--maroon-dark);
+      color: rgba(248, 244, 236, 0.6);
+      font-size: 12.5px;
+      padding: 28px 32px;
+    }
+
+    footer .footer-inner {
+      max-width: 880px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      line-height: 1.6;
+    }
+
+    footer a { color: rgba(248, 244, 236, 0.6); }
+    footer a:hover { color: var(--saffron); }
+
+    /* Section ornament */
+    .ornament {
+      width: 28px;
+      height: 1px;
+      background: var(--terracotta);
+      margin: 0 auto 22px;
+      display: block;
+    }
+
+    .hero .ornament { margin: 0 auto 36px; }
+  </style>
 </head>
 <body>
+
+  <header class="site">
+    <div class="site-inner">
+      <div class="wordmark">ISKCON Foundation</div>
+      <nav class="primary" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#tradition">Our tradition</a>
+        <a href="#inspections">Section 48</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
     <section class="hero">
-        <div class="hero-content">
-            <h1>ISKCON Foundation</h1>
-            <h2>Building a community through giving</h2>
-        </div>
+      <span class="ornament" aria-hidden="true"></span>
+      <h1>ISKCON Foundation</h1>
+      <p class="lede">The designated religious authority for the Avanti Schools Trust, and the inspecting body for the Section 48 inspections of its schools.</p>
     </section>
 
-    <main class="container section">
-        <div class="highlight">
-            <h2>Outreach Patron Programme</h2>
-            <p>
-                We are seeing the need to further develop ISKCON's outreach. It's a gap we all need to take responsibility for and help fill. We have begun to try new things which have the potential to change what Hare Krishna means to the average person and how they engage with Krishna consciousness.
-            </p>
+    <section id="about" class="band">
+      <div class="container">
+        <p class="eyebrow">About us</p>
+        <h2>Who we are</h2>
+        <p>The ISKCON Foundation is a charity registered in England and Wales. Our purpose is to safeguard and develop the Hindu faith character of the schools, by providing resources, support and particularly through faith guidance and inspections for Avanti Schools.</p>
+      </div>
+    </section>
+
+    <section id="tradition" class="band-soft">
+      <div class="container">
+        <p class="eyebrow">Our tradition</p>
+        <h2>What is ISKCON?</h2>
+        <p>ISKCON stands for the International Society for Krishna Consciousness. It is a worldwide movement within the Vaishnava tradition of Hinduism, centred on the worship of one supreme divine, most personally known as Krishna, a name meaning "all-attractive".</p>
+        <p>Founded in 1966 by Srila Prabhupada, ISKCON today has communities in more than a hundred countries.</p>
+      </div>
+    </section>
+
+    <section id="inspections" class="band">
+      <div class="container">
+        <p class="eyebrow">Inspections</p>
+        <h2>Section 48 inspections</h2>
+        <p>Under Section 48 of the Education Act 2005, every school in England with a designated religious character is inspected for the quality of its religious education and the place of faith in its everyday life. For the schools of the Avanti Schools Trust, this work is carried out by the ISKCON Foundation.</p>
+        <p>Our inspections sit alongside, and are independent of, the Ofsted inspections that every school undergoes. Ofsted looks at the school overall. We look at the school as a Hindu faith school: its religious education, its collective worship, the spiritual development of its pupils, and the lived character of its community.</p>
+
+        <h3>Documents</h3>
+        <div class="documents">
+          <a class="doc-row" href="IF Section 48 Inspection Handbook-updated January 2026.pdf" target="_blank" aria-label="Download Inspector handbook and code of conduct">
+            <span class="doc-name">Inspector handbook and code of conduct</span>
+            <span class="doc-meta">PDF <span class="arrow" aria-hidden="true">↓</span></span>
+          </a>
         </div>
+      </div>
+    </section>
 
-        <div class="card">
-            <h2>Our Vision</h2>
-            <p>
-                Srila Prabhupada said that the next step in ISKCON's development was restaurants – so we started one in London. Like in the old days when there was Chaitanya College, a residential retreat place working hand-in-glove with the Manor and Soho Street, we also now need a retreat centre where people who come in contact with KC through temples, books, events, courses and restaurants, can go to take their next step in their spiritual journey.
-            </p>
-        </div>
+    <section id="contact" class="band-dark">
+      <div class="container">
+        <p class="eyebrow">Contact</p>
+        <h2>Get in touch</h2>
+        <p>We aim to reply within five working days.</p>
+        <a class="contact-email" href="mailto:info@iskconfoundation.org.uk">info@iskconfoundation.org.uk</a>
+      </div>
+    </section>
 
-        <div class="card">
-            <h2>We Need Your Help</h2>
-            <p>
-                We need £100,000 per year to develop these strategically critical outreach projects. We can't plan for sustainable future development without this. We want to create restaurants with outreach centres in every major city and several more in London. We also want the retreat centre to be the country's leading residential training and event destination for spiritual seekers.
-            </p>
-        </div>
+  </main>
 
-        <div class="card">
-            <h2>Become an Outreach Patron</h2>
-            <p>
-                We are looking for individuals who will pledge £1,000 per year to join our Outreach Patron Programme so that we can create this ground-breaking outreach platform and make a real difference to the spiritual lives of the people of this country. This is an annual commitment which we hope you will keep renewing as you see the results.
-            </p>
-            <p style="margin-top: 1.5rem;">
-                So far, almost all our funding has relied on a very small group of individuals giving a lot. For our outreach to really flourish in the way Srila Prabhupada desired, we need everyone to contribute at least a small amount. We need you to help by becoming an Outreach Patron.
-            </p>
-        </div>
+  <footer class="site">
+    <div class="footer-inner">
+      <span>ISKCON Foundation Ltd · Registered charity in England and Wales, no. 1105545 · Company no. 05137350</span>
+      <a href="#">Privacy notice</a>
+    </div>
+  </footer>
 
-        <div class="divider"></div>
-
-        <div class="card">
-            <p>
-                ISKCON Foundation is a new ISKCON initiative with national remit and is focused on outreach. It has been established by members of PS Alumni, with permission from ISKCON UK, to further ISKCON's work. Bhaktivedanta Manor has kindly agreed to provide us with a registered address and create a ring-fenced ledger for processing donations until we make our own arrangements.
-            </p>
-        </div>
-    </main>
-
-    <footer>
-        <img src="./iskcon_logo_white.png" alt="ISKCON Logo" width="60" height="60">
-        <p>
-            ISKCON Foundation Ltd<br>
-            Bhaktivedanta Manor, Dharam Marg, Watford,<br>
-            Hertfordshire, England, WD25 8EZ<br>
-            Charity Number: 1105545
-        </p>
-        <a href="IF Section 48 Inspection Handbook-updated January 2026.pdf" target="_blank">Section 48 Inspection Handbook</a>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
-    <script>
-        const lenis = new Lenis({
-            duration: 2.5,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            smoothWheel: true,
-            smoothTouch: false,
-            wheelMultiplier: 0.6,
-            touchMultiplier: 2
-        });
-
-        function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-
-        requestAnimationFrame(raf);
-    </script>
 </body>
 </html>

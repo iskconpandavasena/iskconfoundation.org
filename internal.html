@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internal — ISKCON Foundation</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #F8F4EC;
+      --cream-deep: #F2EBDD;
+      --maroon: #4A1B0C;
+      --maroon-dark: #2C1108;
+      --terracotta: #993C1D;
+      --saffron: #F0997B;
+      --ink: #2C2C2A;
+      --ink-muted: #5F5E5A;
+      --line: rgba(74, 27, 12, 0.12);
+      --line-soft: rgba(74, 27, 12, 0.08);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--ink);
+      background: var(--cream);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--terracotta); text-decoration: none; transition: color 0.15s ease; }
+    a:hover { color: var(--maroon); }
+
+    h1, h2, h3 {
+      font-family: var(--serif);
+      font-weight: 500;
+      color: var(--maroon);
+      margin: 0;
+    }
+
+    p { margin: 0 0 1em; }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin: 0 0 14px;
+      font-weight: 500;
+    }
+
+    header.site {
+      padding: 22px 32px;
+      border-bottom: 0.5px solid var(--line);
+      backdrop-filter: blur(8px);
+      background: rgba(248, 244, 236, 0.92);
+    }
+
+    .site-inner {
+      max-width: 880px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .wordmark {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 500;
+      color: var(--maroon);
+    }
+
+    .badge {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: var(--terracotta);
+      color: var(--cream);
+      padding: 4px 10px;
+      border-radius: 3px;
+    }
+
+    section.hero {
+      padding: 80px 32px 72px;
+      text-align: center;
+      border-bottom: 0.5px solid var(--line-soft);
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin: 0 0 16px;
+    }
+
+    .hero .lede {
+      font-size: 16px;
+      color: var(--ink-muted);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .ornament {
+      width: 28px;
+      height: 1px;
+      background: var(--terracotta);
+      margin: 0 auto 28px;
+      display: block;
+    }
+
+    section.band { padding: 88px 0; }
+
+    section.band-soft {
+      padding: 88px 0;
+      background: var(--cream-deep);
+      border-top: 0.5px solid var(--line-soft);
+      border-bottom: 0.5px solid var(--line-soft);
+    }
+
+    section.band-dark {
+      padding: 88px 0;
+      background: var(--maroon);
+      color: var(--cream);
+    }
+
+    section.band-dark .eyebrow { color: var(--saffron); }
+    section.band-dark p { color: rgba(248, 244, 236, 0.85); }
+
+    @media (max-width: 600px) {
+      section.band, section.band-soft, section.band-dark { padding: 64px 0; }
+    }
+
+    section h2 {
+      font-size: 38px;
+      line-height: 1.15;
+      margin: 0 0 24px;
+      letter-spacing: -0.01em;
+    }
+
+    section.band-dark h2 { color: var(--cream); }
+
+    section h3 {
+      font-family: var(--serif);
+      font-size: 21px;
+      line-height: 1.3;
+      margin: 36px 0 14px;
+      color: var(--maroon);
+      font-weight: 500;
+    }
+
+    section p { font-size: 16px; }
+
+    .highlight-box {
+      background: var(--maroon);
+      color: var(--cream);
+      border-radius: 8px;
+      padding: 28px 32px;
+      margin: 24px 0 0;
+    }
+
+    .highlight-box p {
+      color: rgba(248, 244, 236, 0.85);
+      margin: 0;
+    }
+
+    .doc-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 0.5px solid var(--line);
+      gap: 16px;
+    }
+
+    .doc-row .doc-name { font-size: 15px; color: var(--ink); }
+    .doc-row .doc-meta {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: var(--terracotta);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .documents {
+      margin-top: 24px;
+      border-top: 0.5px solid var(--line);
+    }
+
+    footer.site {
+      background: var(--maroon-dark);
+      color: rgba(248, 244, 236, 0.6);
+      font-size: 12.5px;
+      padding: 28px 32px;
+    }
+
+    footer .footer-inner {
+      max-width: 880px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer a { color: rgba(248, 244, 236, 0.6); }
+    footer a:hover { color: var(--saffron); }
+  </style>
+</head>
+<body>
+
+  <header class="site">
+    <div class="site-inner">
+      <div class="wordmark">ISKCON Foundation</div>
+      <span class="badge">Internal — not linked publicly</span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <span class="ornament" aria-hidden="true"></span>
+    <h1>Archived content</h1>
+    <p class="lede">Content from the original website that was not carried over to the new design. For internal reference only.</p>
+  </section>
+
+  <section class="band">
+    <div class="container">
+      <p class="eyebrow">Removed section</p>
+      <h2>Outreach Patron Programme</h2>
+      <p>We are seeing the need to further develop ISKCON's outreach. It's a gap we all need to take responsibility for and help fill. We have begun to try new things which have the potential to change what Hare Krishna means to the average person and how they engage with Krishna consciousness.</p>
+    </div>
+  </section>
+
+  <section class="band-soft">
+    <div class="container">
+      <p class="eyebrow">Removed section</p>
+      <h2>Our Vision</h2>
+      <p>Srila Prabhupada said that the next step in ISKCON's development was restaurants – so we started one in London. Like in the old days when there was Chaitanya College, a residential retreat place working hand-in-glove with the Manor and Soho Street, we also now need a retreat centre where people who come in contact with KC through temples, books, events, courses and restaurants, can go to take their next step in their spiritual journey.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container">
+      <p class="eyebrow">Removed section</p>
+      <h2>We Need Your Help</h2>
+      <p>We need £100,000 per year to develop these strategically critical outreach projects. We can't plan for sustainable future development without this. We want to create restaurants with outreach centres in every major city and several more in London. We also want the retreat centre to be the country's leading residential training and event destination for spiritual seekers.</p>
+    </div>
+  </section>
+
+  <section class="band-soft">
+    <div class="container">
+      <p class="eyebrow">Removed section</p>
+      <h2>Become an Outreach Patron</h2>
+      <p>We are looking for individuals who will pledge £1,000 per year to join our Outreach Patron Programme so that we can create this ground-breaking outreach platform and make a real difference to the spiritual lives of the people of this country. This is an annual commitment which we hope you will keep renewing as you see the results.</p>
+      <p>So far, almost all our funding has relied on a very small group of individuals giving a lot. For our outreach to really flourish in the way Srila Prabhupada desired, we need everyone to contribute at least a small amount. We need you to help by becoming an Outreach Patron.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container">
+      <p class="eyebrow">Removed section</p>
+      <h2>About the Foundation</h2>
+      <p>ISKCON Foundation is a new ISKCON initiative with national remit and is focused on outreach. It has been established by members of PS Alumni, with permission from ISKCON UK, to further ISKCON's work. Bhaktivedanta Manor has kindly agreed to provide us with a registered address and create a ring-fenced ledger for processing donations until we make our own arrangements.</p>
+
+      <h3>Removed from footer</h3>
+      <div class="documents">
+        <div class="doc-row">
+          <span class="doc-name">Physical address</span>
+          <span class="doc-meta">Bhaktivedanta Manor, Dharam Marg, Watford, Hertfordshire, WD25 8EZ</span>
+        </div>
+        <div class="doc-row">
+          <span class="doc-name">ISKCON logo (iskcon_logo_white.png)</span>
+          <span class="doc-meta">Not used in new design</span>
+        </div>
+        <div class="doc-row">
+          <span class="doc-name">Hero tagline</span>
+          <span class="doc-meta">"Building a community through giving"</span>
+        </div>
+      </div>
+
+      <h3>What the new design adds</h3>
+      <div class="documents">
+        <div class="doc-row">
+          <span class="doc-name">Sticky header with navigation</span>
+          <span class="doc-meta">New</span>
+        </div>
+        <div class="doc-row">
+          <span class="doc-name">About us / Who we are (Avanti Schools focus)</span>
+          <span class="doc-meta">New</span>
+        </div>
+        <div class="doc-row">
+          <span class="doc-name">Our tradition / What is ISKCON?</span>
+          <span class="doc-meta">New</span>
+        </div>
+        <div class="doc-row">
+          <span class="doc-name">Section 48 inspections explained</span>
+          <span class="doc-meta">New</span>
+        </div>
+        <div class="doc-row">
+          <span class="doc-name">Document downloads section</span>
+          <span class="doc-meta">New</span>
+        </div>
+        <div class="doc-row">
+          <span class="doc-name">Contact section with email address</span>
+          <span class="doc-meta">New</span>
+        </div>
+        <div class="doc-row">
+          <span class="doc-name">Company number (05137350) in footer</span>
+          <span class="doc-meta">New</span>
+        </div>
+        <div class="doc-row">
+          <span class="doc-name">Privacy notice link in footer</span>
+          <span class="doc-meta">New</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="footer-inner">
+      <span>ISKCON Foundation Ltd · Internal reference page · Not linked publicly</span>
+      <a href="/">← Back to main site</a>
+    </div>
+  </footer>
+
+</body>
+</html>

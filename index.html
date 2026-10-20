@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ISKCON Foundation</title>
-  <meta name="description" content="The ISKCON Foundation is the designated religious authority for the Avanti Schools Trust and the inspecting body for the Section 48 inspections of its schools.">
+  <title>ISKCON Foundation Ltd</title>
+  <meta name="description" content="The official website of ISKCON Foundation Ltd, registered charity 1105545. We support Hindu faith education and carry out Section 48 inspections for Avanti Schools.">
+  <link rel="canonical" href="https://iskconfoundation.org/">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +30,8 @@
     * { box-sizing: border-box; }
 
     html { scroll-behavior: smooth; }
+
+    [id] { scroll-margin-top: 100px; }
 
     body {
       margin: 0;
@@ -192,6 +195,15 @@
 
     section p { font-size: 16px; }
 
+    .registration-details {
+      margin-top: 36px;
+      padding-top: 24px;
+      border-top: 0.5px solid var(--line);
+    }
+
+    .registration-details h3 { margin-top: 0; }
+    .registration-details a { text-decoration: underline; text-underline-offset: 3px; }
+
     /* Documents */
     .documents {
       margin-top: 36px;
@@ -233,15 +245,11 @@
     .doc-row:hover .arrow { transform: translateY(2px); }
 
     /* Contact */
-    .contact-email {
-      font-family: var(--serif);
-      font-size: 26px;
-      color: var(--saffron);
-      margin: 24px 0 36px;
-      display: inline-block;
-    }
+    .contact-address { font-style: normal; }
 
-    .contact-email:hover { color: var(--cream); }
+    section.band-dark a { color: var(--saffron); text-decoration: underline; text-underline-offset: 3px; }
+    section.band-dark a:hover { color: var(--cream); }
+    section.band-dark a:focus-visible { outline-color: var(--saffron); }
 
     section.band-dark .eyebrow { color: var(--saffron); }
 
@@ -307,7 +315,13 @@
       <div class="container">
         <p class="eyebrow">About us</p>
         <h2>Who we are</h2>
-        <p>The ISKCON Foundation is a charity registered in England and Wales. Our purpose is to safeguard and develop the Hindu faith character of the schools, by providing resources, support and particularly through faith guidance and inspections for Avanti Schools.</p>
+        <p>ISKCON Foundation Ltd is a charity registered in England and Wales. Our purpose is to safeguard and develop the Hindu faith character of the schools, by providing resources, support and particularly through faith guidance and inspections for Avanti Schools.</p>
+        <div id="organisation" class="registration-details">
+          <h3>Our charity and website</h3>
+          <p><strong>iskconfoundation.org is the official website of ISKCON Foundation Ltd.</strong> We use this website to share information about our charity, our work in Hindu faith education and our school inspections.</p>
+          <p>We are registered with the <a href="https://register-of-charities.charitycommission.gov.uk/en/charity-search/-/charity-details/4009083">Charity Commission for England and Wales (charity number 1105545)</a> and <a href="https://find-and-update.company-information.service.gov.uk/company/05137350">Companies House (company number 05137350)</a>.</p>
+          <p>Our former company names were I-Foundation Limited, IFoundation Ltd and Hindu Education Authority Ltd. These names refer to the same legal organisation, which has been named ISKCON Foundation Ltd since June 2021. The Charity Commission's <a href="https://register-of-charities.charitycommission.gov.uk/en/charity-search/-/charity-details/4009083/contact-information">contact record</a> lists i-foundation.org; our current website is iskconfoundation.org.</p>
+        </div>
       </div>
     </section>
 
@@ -341,7 +355,16 @@
       <div class="container">
         <p class="eyebrow">Contact</p>
         <h2>Get in touch</h2>
-        <p>We aim to reply within five working days.</p>
+        <p>You can write to ISKCON Foundation Ltd at our registered office:</p>
+        <address class="contact-address">
+          ISKCON Foundation Ltd<br>
+          Bhaktivedanta Manor<br>
+          Dharam Marg, Hilfield Lane<br>
+          Aldenham, Watford<br>
+          Hertfordshire, WD25 8EZ<br>
+          England
+        </address>
+        <p><a href="https://find-and-update.company-information.service.gov.uk/company/05137350">View our registered office on Companies House</a></p>
       </div>
     </section>
 
@@ -350,7 +373,7 @@
   <footer class="site">
     <div class="footer-inner">
       <span>ISKCON Foundation Ltd · Registered charity in England and Wales, no. 1105545 · Company no. 05137350</span>
-      <a href="#">Privacy notice</a>
+      <a href="#organisation">Charity and registration details</a>
     </div>
   </footer>
 
